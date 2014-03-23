@@ -1,0 +1,44 @@
+<?php
+namespace Imp\AppBundle\Document;
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @MongoDB\Document
+ */
+class Match
+{
+    /**
+     * @MongoDB\Id
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\Date
+     */
+    private $date;
+
+    /**
+     * @MongoDB\ReferenceOne(targetDocument="Team")
+     */
+    private $firstTeam;
+
+    /**
+     * @MongoDB\ReferenceOne(targetDocument="Team")
+     */
+    private $secondTeam;
+
+    /**
+     * @MongoDB\Int
+     */
+    private $firstTeamScore;
+
+    /**
+     * @MongoDB\Int
+     */
+    private $secondTeamScore;
+}

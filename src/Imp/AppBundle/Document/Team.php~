@@ -1,0 +1,42 @@
+<?php
+namespace Imp\AppBundle\Document;
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @MongoDB\Document
+ */
+class Team
+{
+    /**
+     * @MongoDB\Id
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\String
+     * @Assert\NotBlank()
+     */
+    private $name;
+
+    /**
+     * @MongoDB\Date
+     */
+    private $dateCreated;
+
+    /**
+     * @MongoDB\String
+     * @Assert\NotBlank()
+     */
+    private $coach;
+
+    /**
+     * @MongoDB\ReferenceOne(targetDocument="Group", simple=true)
+     */
+    private $group;
+
+}

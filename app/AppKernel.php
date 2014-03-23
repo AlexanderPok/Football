@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Imp\ParserBundle\ImpParserBundle(),
+            new Imp\AppBundle\ImpAppBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

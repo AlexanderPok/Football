@@ -1,0 +1,8 @@
+imp_app:
+    resource: "@ImpAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+imp_parser:
+    resource: "@ImpParserBundle/Resources/config/routing.yml"
+    prefix:   /
+
