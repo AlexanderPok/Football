@@ -3,4 +3,11 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="imp.parser.parser" class="Imp\ParserBundle\Service\Parser">
+            <argument type="service" id="guzzle.client"/>
+            <argument type="service" id="doctrine_mongodb.odm.default_document_manager" />
+            <argument type="service" id="imp.app.repository.team" />
+        </service>
+    </services>
 </container>

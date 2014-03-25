@@ -2,12 +2,22 @@
 
 namespace Imp\ParserBundle\Controller;
 
+use Imp\ParserBundle\Service\Parser;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    /**
+     * Parse teams page http://worldcup2014.football.ua/teams/
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function teamsAction()
     {
-        return $this->render('ImpParserBundle:Default:index.html.twig', array('name' => $name));
+        /** @var Parser $parserService */
+        $parserService = $this->get('imp.parser.parser');
+        $parserService->parseTeams();
+
+        return $this->render('ImpParserBundle:Default:teams.html.twig');
     }
 }
