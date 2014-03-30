@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Imp\AppBundle\Repository\TeamRepository")
  */
 class Team
 {
@@ -35,7 +35,9 @@ class Team
     private $coach;
 
     /**
-     * @MongoDB\ReferenceOne(targetDocument="Group", simple=true)
+     * @MongoDB\ReferenceMany(targetDocument="Group")
+     *
+     * @var ArrayCollection|Group[]
      */
     private $group;
 
@@ -115,23 +117,35 @@ class Team
     {
         return $this->coach;
     }
+    public function __construct()
+    {
+        $this->group = new ArrayCollection();
+    }
+    
+    /**
+     * Add group
+     *
+     * @param Group $group
+     */
+    public function addGroup(\Imp\AppBundle\Document\Group $group)
+    {
+        $this->group[] = $group;
+    }
 
     /**
-     * Set group
+     * Remove group
      *
-     * @param \Imp\AppBundle\Document\Group $group
-     * @return self
+     * @param Group $group
      */
-    public function setGroup(\Imp\AppBundle\Document\Group $group)
+    public function removeGroup(Group $group)
     {
-        $this->group = $group;
-        return $this;
+        $this->group->removeElement($group);
     }
 
     /**
      * Get group
      *
-     * @return \Imp\AppBundle\Document\Group $group
+     * @return Collection $group
      */
     public function getGroup()
     {

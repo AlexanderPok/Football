@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     /**
-     * Parse teams page http://worldcup2014.football.ua/teams/
+     * Parse teams page http://worldcup2014.football.ua/groups/
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */

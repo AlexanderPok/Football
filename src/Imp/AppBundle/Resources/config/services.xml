@@ -9,5 +9,11 @@
                  factory-method="getRepository">
             <argument>ImpAppBundle:Team</argument>
         </service>
+
+        <service id="imp.app.repository.match" class="Imp\AppBundle\Repository\MatchRepository"
+                 factory-service="doctrine_mongodb.odm.default_document_manager"
+                 factory-method="getRepository">
+            <argument>ImpAppBundle:Match</argument>
+        </service>
     </services>
 </container>
