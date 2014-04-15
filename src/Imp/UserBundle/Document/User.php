@@ -1,6 +1,4 @@
 <?php
-// src/Imp/UserBundle/Document/User.php
-
 namespace Imp\UserBundle\Document;
 
 use FOS\UserBundle\Document\User as BaseUser;

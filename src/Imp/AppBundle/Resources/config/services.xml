@@ -15,5 +15,17 @@
                  factory-method="getRepository">
             <argument>ImpAppBundle:Match</argument>
         </service>
+
+        <service id="imp.app.menu.builder" class="Imp\AppBundle\Menu\MenuBuilder">
+            <argument type="service" id="knp_menu.factory" />
+        </service>
+
+        <service id="imp.app.menu.main" class="Knp\Menu\MenuItem"
+                 factory-service="imp.app.menu.builder"
+                 factory-method="createMainMenu"
+                 scope="request">
+            <tag name="knp_menu.menu" alias="mainNavbar" />
+            <argument type="service" id="request" />
+        </service>
     </services>
 </container>

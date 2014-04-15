@@ -28,7 +28,11 @@
         "stof/doctrine-extensions-bundle": "~1.1@dev",
         "knplabs/knp-menu-bundle": "2.0.*@dev",
         "knplabs/knp-menu": "2.0.*@dev",
-        "friendsofsymfony/user-bundle": "~1.3"
+        "friendsofsymfony/user-bundle": "~1.3",
+        "braincrafted/bootstrap-bundle": "dev-develop",
+        "twbs/bootstrap": "v3.0.0",
+        "components/jquery": "1.10.2",
+        "knplabs/knp-components": "~1.2@dev"
     },
     "scripts": {
         "post-install-cmd": [

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Football!{% endblock %}</title>
+    {% block head %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" media="screen">
+        {% stylesheets '@ImpAppBundle/Resources/public/css/*' filter='cssrewrite,?yui_css' output='css/compiled/impapp.css' %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+        {% endstylesheets %}
+        <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+        {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    {% endblock %}
+</head>
+
+<body>
+{% block body_start %}
+{% endblock %}
+{% block header %}
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            {{ knp_menu_render('mainNavbar', { 'style': 'navbar' }) }}
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <div id="wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>{% block pageTitle %}{% endblock %}</h1>
+                    {% block wrappedContent %}{% endblock %}
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block before_body_end %}
+    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+    <script src="{{ asset('/js/jquery.js') }}"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src="{{ asset('/js/bootstrap.js') }}"></script>
+    {% javascripts '@ImpAppBundle/Resources/public/js/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+</body>
+</html>
