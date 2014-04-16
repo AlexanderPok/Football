@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
         <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" media="screen">
-        {% stylesheets '@ImpAppBundle/Resources/public/css/*' filter='cssrewrite,?yui_css' output='css/compiled/impapp.css' %}
+        {% stylesheets '@ImpAppBundle/Resources/public/css/*' filter='cssrewrite,?yui_css' %}
         <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
         {% endstylesheets %}
         <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->

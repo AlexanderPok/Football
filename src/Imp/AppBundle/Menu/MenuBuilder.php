@@ -21,8 +21,8 @@ class MenuBuilder
             'navbar' => true,
         ));
         $menu->addChild('Home', array('route' => 'imp_app_home'));
-//        $menu->addChild('About me', array('route' => 'gh_blog_about'));
-//        $menu->addChild('Guestbook', array('route' => 'gh_guestbook_message'));
+        $menu->addChild('Teams', array('route' => 'imp_app_teams'));
+        $menu->addChild('Groups', array('route' => 'imp_app_groups'));
         return $menu;
     }
 }

@@ -1,0 +1,16 @@
+{% extends 'ImpAppBundle::layout.html.twig' %}
+{% block wrappedContent %}
+    {% for team in teams %}
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <dl class="team panel-body">
+                    <dt>Name:</dt><dd>{{ team.name }}</dd>
+                    <dt>Coach:</dt><dd>{{ team.coach }}</dd>
+                    {% if team.dateCreated %}
+                        <dt>Date created:</dt><dd>{{ team.dateCreated|date('m/d/y') }}</dd>
+                    {% endif %}
+                </dl>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,3 +1,11 @@
 imp_app_home:
     pattern:  /
     defaults: { _controller: ImpAppBundle:Default:index }
+
+imp_app_teams:
+    pattern: /teams
+    defaults: { _controller: ImpAppBundle:Team:list }
+
+imp_app_groups:
+    pattern: /groups
+    defaults: { _controller: ImpAppBundle:Group:list }
